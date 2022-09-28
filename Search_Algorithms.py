@@ -286,14 +286,14 @@ def get_frontier_params(node, frontier):
     return False, None, None, None
 
 
-def get_manhattan_heuristic(node, goal):
-    i, j = divmod(int(node), 8)
-    i_goal, j_goal = divmod(int(goal), 8)
-    i_delta = abs(i - i_goal)
-    j_delta = abs(j - j_goal)
+# def get_manhattan_heuristic(node, goal):
+#     i, j = divmod(int(node), 8)
+#     i_goal, j_goal = divmod(int(goal), 8)
+#     i_delta = abs(i - i_goal)
+#     j_delta = abs(j - j_goal)
 
-    manhattan_dist = i_delta + j_delta
-    return manhattan_dist
+#     manhattan_dist = i_delta + j_delta
+#     return manhattan_dist
 
 def get_geographical_heuristic(node, goal):
     i, j = divmod(int(node), 8)
@@ -318,10 +318,10 @@ if __name__ == '__main__':
     
     print("============ AStar Search ================")
     print("Manhattan heuristic")
-    path_astar, explored_astar = astar_search(graph_neighbours, '0', '31',get_manhattan_heuristic )
-    print("Path_astar:", path_astar)
-    print("Explored Nodes A Star: ", explored_astar)
-    print(len(explored_astar))
+    # path_astar, explored_astar = astar_search(graph_neighbours, '0', '31',get_manhattan_heuristic )
+    # print("Path_astar:", path_astar)
+    # print("Explored Nodes A Star: ", explored_astar)
+    # print(len(explored_astar))
     print()
     print("Geographical heuristic")
     path_astar, explored_astar = astar_search(graph_neighbours, '0', '27',get_geographical_heuristic)
@@ -340,8 +340,8 @@ if __name__ == '__main__':
     print(len(explored_1) + len(explored_2))
     
     print("============ Bottleneck Astar Search using manhattan heuristic================")
-    path_1, explored_1 = astar_search(graph_neighbours, '0', '27', get_manhattan_heuristic)
-    path_2, explored_2 = astar_search(graph_neighbours, '35', '61', get_manhattan_heuristic)
+    # path_1, explored_1 = astar_search(graph_neighbours, '0', '27', get_manhattan_heuristic)
+    # path_2, explored_2 = astar_search(graph_neighbours, '35', '61', get_manhattan_heuristic)
     print("Path1:", path_1)
     print("Path_2:", path_2)
 
